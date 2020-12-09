@@ -2,6 +2,11 @@
   <div class="container">
     <div class="title">InformationsVisualierung Group 13</div>
 
+
+    <div class="title is-5 pt-6">Vega Example</div>
+    <div #vis></div>
+  
+    <div class="title is-5 pt-6">CSV data</div>
     <p>Some data from our <code>csv</code> file</p>
     <div class="table-container mt-5">
       <table class="table">
@@ -22,7 +27,8 @@
       </table>
     </div>
 
-    <div class="title is-5 mt-5">Linechart for temperature of year 1980</div>
+    <div class="title is-5 pt-6">chart.js Example</div>
+    <div class="subtitle is-5 mt-5">Linechart for temperature of year 1980</div>
     <div *ngIf="datasetStore.lineChartData$ | async as lineData">
       <app-linechart [data]="convertToDataset(lineData, 'temperature', '#3498DB')"></app-linechart>
 
