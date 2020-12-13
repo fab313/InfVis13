@@ -20,6 +20,7 @@ export class DatasetStoreService extends Store<DatasetRowRaw[]> {
       chlorophyll: +d["Calculated.Chlorophyll"], 
       spm: +d["Calculated.SPM"],
       salinity: +d["Salinity"],
+      oxygen: +d["Calculated.Oxygen"],
       temperature: +d["Temperature"] } as DatasetRow))
   ));
 

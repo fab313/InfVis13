@@ -61,7 +61,8 @@ export class LinechartComponent implements AfterViewInit {
             },
           },
           gridLines: {
-            color: 'whitesmoke',
+            color: '#F8F8F8',
+            lineWidth: '1'
           },
           ticks: {
             font: {

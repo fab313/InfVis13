@@ -23,7 +23,7 @@ interface AverageData {
   styleUrls: ['./map-overview.component.scss'],
 })
 export class MapOverviewComponent {
-  possibleTypes = ['temperature', 'spm', 'chlorophyll', 'salinity'];
+  possibleTypes = ['temperature', 'spm', 'chlorophyll', 'salinity', 'oxygen'];
 
   private selectedStation$ = new BehaviorSubject<Station>(null);
   private selectedType$ = new BehaviorSubject<string>('temperature');
@@ -73,7 +73,7 @@ export class MapOverviewComponent {
     map((data) => {
       return {
         dataset: [
-          this.convertToDataset(data.dataset, data.selectedType, '#f14668'),
+          this.convertToDataset(data.dataset, data.selectedType, '#06d6a0'),
           this.convertToDataset(data.average, `average ${data.selectedType}`, ),
         ],
         selectedStation: data.selectedStation,
@@ -111,7 +111,7 @@ export class MapOverviewComponent {
     if(qual === 3) {
       return 'Excellent Water Quality'
     } else if (qual === 2) {
-      return 'Average Water Quality'
+      return 'Ok Water Quality'
     } else if (qual === 1) {
       return 'Bad Water Quality'
     }

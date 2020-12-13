@@ -15,7 +15,7 @@ export class GoogleMapsComponent {
   @Output()
   selectStation = new EventEmitter<Station>();
 
-  markerOptions: google.maps.MarkerOptions = {clickable: true };
+  markerOptions: google.maps.MarkerOptions = {clickable: true, icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png' };
 
   constructor(public stationStore: StationStoreService) {
 
@@ -23,6 +23,19 @@ export class GoogleMapsComponent {
 
   showStation(station: Station) {
     this.selectStation.emit(station);
+  }
+
+  getOptions(quality: number) {
+    let options: google.maps.MarkerOptions = {clickable: true};
+
+    if(quality === 3) {
+      options.icon = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+    } else if (quality === 2) {
+      options.icon = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+    } else if (quality === 1) {
+      options.icon = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+    }
+    return options;
   }
 
 }
