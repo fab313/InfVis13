@@ -1,0 +1,17 @@
+.navbar-item {
+    position: relative;
+    &.is-active {
+        background-color: #FFFFFF !important;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 90%;
+            height: 3px;
+            left: 5%;
+            right: 5%;
+            bottom: 0.5em;
+            border-radius: 6px;
+            background: #06d6a0;
+        }
+    }
+}

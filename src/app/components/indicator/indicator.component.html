@@ -1,0 +1,22 @@
+<div class="indicator-container" *ngIf="quality" style="height: 15rem; width: 15rem; position:relative">
+    <div class="circle" style="background: none; border: 1px solid lightgrey; opacity: 0.8">
+      <!-- INSTEAD OF --value AND THE VALUE IN THE SPAN, SEND THE SCORE THAT NEEDS TO BE DISPLAYED -->
+      <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" style="background: light-grey;"
+         [style.margin-top.%]="50" [style.fill]="getColorForQuality(quality)">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18  58-18 88-18 58 18 88 18 v 44 h -352 z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="50" y="6" />
+        </g>
+  
+      </svg>
+  
+      <div class="full" [ngClass]="{'has-background-danger': quality === 1, 'has-background-warning': quality === 2, 'has-background-success': quality === 3}" style="height:100%" ></div>
+    </div>
+    <span style="z-index: 100; position: absolute; bottom: 4rem;" class="has-text-centered">
+        <div class="title is-5 mb-5">{{getTextForQuality(quality)}}</div>
+        <div class="subtitle is-7">Quality</div>
+    </span>
+  </div>

@@ -1,0 +1,47 @@
+.indicator-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    // height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    will-change: auto;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    overflow: hidden;
+    top: 17.5%;
+  }
+  .full {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .parallax > use {
+    /* FOR CHANGING THE SPEED OF THE WAVE, CHANGE THE NUMBER OF SECONDS BELOW
+    (YOU CAN USE DECIMALS TOO)
+    EXAMPLE: 10s - for slow wave; 0.5s for really fast wave */
+    animation: move-forever 6s linear infinite;
+  }
+  
+  @keyframes move-forever {
+    0% {
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      transform: translate(85px, 0%);
+    }
+  }
+  .editorial {
+    display: block;
+    width: 100%;
+    /* FOR A SMALLER WAVE (AMPLITUDE), DECREASE THE HEIGHT IN PERCENTAGE */
+    height: 10%;
+  }

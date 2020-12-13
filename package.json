@@ -26,9 +26,6 @@
     "date-fns": "^2.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "vega": "^5.17.0",
-    "vega-embed": "^6.14.0",
-    "vega-lite": "^4.17.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

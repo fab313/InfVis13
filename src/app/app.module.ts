@@ -10,6 +10,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { AdvancedComponent } from './components/advanced/advanced.component';
 import { MapOverviewComponent } from './components/map-overview/map-overview.component';
 import { DocumentationComponent } from './components/documentation/documentation.component';
+import { IndicatorComponent } from './components/indicator/indicator.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DocumentationComponent } from './components/documentation/documentation
     GoogleMapsComponent,
     AdvancedComponent,
     MapOverviewComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    IndicatorComponent
   ],
   imports: [
     BrowserModule,
