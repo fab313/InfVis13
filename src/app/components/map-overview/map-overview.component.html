@@ -19,7 +19,7 @@
                         </div>
                         <div class="field has-addons is-centered pt-5" style="justify-content: center;">
                             <p class="control" *ngFor="let type of possibleTypes">
-                                <button class="button is-primary" (click)="vm.selectedType !== type && setType(type)" [ngClass]="{'is-primary': vm.selectedType === type}">{{type}}</button>
+                                <button class="button is-primary is-capitalized" (click)="vm.selectedType !== type && setType(type)" [ngClass]="{'is-primary': vm.selectedType === type}">{{type}}</button>
                             </p>
                         </div>
 
