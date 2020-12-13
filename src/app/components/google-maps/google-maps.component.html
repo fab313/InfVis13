@@ -1,0 +1,4 @@
+<google-map [width]="'100%'" [height]="'90vh'" (mapClick)="showStation(null)" [center]="center" [zoom]="zoom">
+  <map-marker *ngFor="let station of stationStore.state$ | async" [position]="{lat: station.latitude,lng: station.longitude}" [options]="markerOptions" (mapClick)="showStation(station)"></map-marker>
+
+</google-map>

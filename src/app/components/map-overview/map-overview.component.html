@@ -1,0 +1,41 @@
+<div *ngIf="vm$ | async as vm">
+    <app-google-maps (selectStation)="updateStation($event)"></app-google-maps>
+    <div class="has-background-light bottom" [ngClass]="{'is-shown': vm.selectedStation}">
+      <section class="section"  *ngIf="vm.selectedStation; else noStationSelected" style="height:100%">
+        <div class="container"  style="height:100%">
+                <div class="title">{{vm.selectedStation.name}}</div>
+                <div class="subtitle">Station {{vm.selectedStation.sNr}}</div>
+                <div class="columns">
+                    <div class="column is-3" >
+                        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%">
+                            <div [ngClass]="{'has-background-danger': vm.selectedStation.quality <= 1,
+                            'has-background-warning': vm.selectedStation.quality === 2, 'has-background-success': vm.selectedStation.quality === 3}" style="height: 10rem; width: 10rem; border-radius: 10rem"></div>
+                            <div class="title is-5 pt-5">{{getTextForQuality(vm.selectedStation.quality)}}</div>
+                        </div>
+                    </div>
+                    <div class="column is-9" style="display: flex; flex-direction: column;">
+                        <div style="position: relative; height: 15rem" >
+                            <app-linechart [data]="vm.dataset"></app-linechart>
+                        </div>
+                        <div class="field has-addons is-centered pt-5" style="justify-content: center;">
+                            <p class="control" *ngFor="let type of possibleTypes">
+                                <button class="button is-primary" (click)="vm.selectedType !== type && setType(type)" [ngClass]="{'is-primary': vm.selectedType === type}">{{type}}</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>               
+
+    
+          <!--
+          <div *ngIf="datasetStore.lineChartData$ | async as lineData">
+            <app-linechart [data]="convertToDataset(lineData, 'temperature', '#3498DB')" ></app-linechart>
+          </div>-->
+        </div>
+      </section>
+      <ng-template #noStationSelected><div class="has-text-centered mt-2" >
+        Click on a Station to show some Information
+      </div></ng-template>
+
+    </div>
+</div>

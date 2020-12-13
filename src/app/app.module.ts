@@ -5,16 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LinechartComponent } from './components/linechart/linechart.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { AdvancedComponent } from './components/advanced/advanced.component';
+import { MapOverviewComponent } from './components/map-overview/map-overview.component';
+import { DocumentationComponent } from './components/documentation/documentation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LinechartComponent
+    LinechartComponent,
+    GoogleMapsComponent,
+    AdvancedComponent,
+    MapOverviewComponent,
+    DocumentationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

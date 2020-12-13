@@ -12,7 +12,7 @@ export class CsvLoaderService {
 
   constructor(private http: HttpClient) { }
 
-
+/*
   loadAssetFile(): Observable<DatasetRow[]> {
 
     return this.http.get('assets/SFBay_version2.csv', {responseType: 'text'}).pipe(
@@ -47,5 +47,5 @@ export class CsvLoaderService {
         } as DatasetRow;
       }))
     );
-  }
+  }*/
 }

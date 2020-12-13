@@ -1,0 +1,11 @@
+
+.bottom {
+    position: fixed; 
+    height: calc(10vh - 3.25em); 
+    bottom: 0; 
+    width: 100%;
+    transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    &.is-shown {
+        height: 30em;
+    }
+}

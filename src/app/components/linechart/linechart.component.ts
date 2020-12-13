@@ -13,12 +13,14 @@ import { TimeScatterPoint } from '../../services/dataset.model';
 })
 export class LinechartComponent implements AfterViewInit {
 
-  @Input()
-  set data(d: ChartDataset<'line'>) {
-    if (this.myChart) {
-      this.myChart.data.datasets[0] = d;
-      this.myChart.update();
 
+  private _data: ChartDataset<'line'>[];
+  @Input()
+  set data(d: ChartDataset<'line'>[]) {
+    this._data = d;
+    if (this.myChart) {
+      this.myChart.data.datasets = d;
+      this.myChart.update();
     }
   }
 
@@ -37,12 +39,18 @@ export class LinechartComponent implements AfterViewInit {
       type: 'line',
       data: {
         labels: [],
-        datasets: []
+        datasets: this._data
       },
       options: {
+        maintainAspectRatio: false,
+        layout: {
+          padding: {
+            right: 50
+          }
+        },
         scales: {
           x: {
-            type: 'timeseries',
+            type: 'time',
           time: {
             unit: 'month',
             tooltipFormat: 'dd.MM.yyyy -- hh:mm'

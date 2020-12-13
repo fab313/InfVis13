@@ -1,40 +1,26 @@
-<section class="section">
-  <div class="container">
-    <div class="title">InformationsVisualierung Group 13</div>
-
-
-    <div class="title is-5 pt-6">Vega Example</div>
-    <div #vis></div>
-  
-    <div class="title is-5 pt-6">CSV data</div>
-    <p>Some data from our <code>csv</code> file</p>
-    <div class="table-container mt-5">
-      <table class="table">
-      <thead>
-        <th>Date</th>
-        <th>Temperture</th>
-        <th>Discrete Chlorophyll</th>
-      </thead>
-       <tbody>
-         <!-- show -->
-        <tr *ngFor="let row of datasetStore.state$ | async | slice:0:10">
-          <td>{{row.timestamp | date}}</td>
-          <td>{{row.temperature | number}}</td>
-          <td>{{row.discreteChlorophyll | number}}</td>
-
-        </tr>
-       </tbody>
-      </table>
-    </div>
-
-    <div class="title is-5 pt-6">chart.js Example</div>
-    <div class="subtitle is-5 mt-5">Linechart for temperature of year 1980</div>
-    <div *ngIf="datasetStore.lineChartData$ | async as lineData">
-      <app-linechart [data]="convertToDataset(lineData, 'temperature', '#3498DB')"></app-linechart>
-
-    </div>
-    
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <strong>
+      InfVis - Group 13
+    </strong>
+    </a>
   </div>
-</section>
 
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" [routerLink]="''">
+        Map
+      </a>
+
+      <a class="navbar-item" [routerLink]="'advanced'">
+        Dashboard
+      </a>
+
+      <a class="navbar-item"  [routerLink]="'documentation'">
+        Documentation
+      </a>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
