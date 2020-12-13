@@ -9,33 +9,39 @@
 
         <div class="title is-5 mt-6">Data</div>
         <div class="subtitle is-5">Structure</div>
-        <p>asdfasdf</p>
-
+        <p>The underlying data consists of aggregated data on a month basis. For every station it's average <code>chlorophyll</code>, <code>oxygen</code>, <code>SPM</code>, <code>salinity</code> and <code>temperature</code> value are available</p>
+        <div class="has-background-light mt-5" style="padding: 2em; border-radius: 1em">
+            <div>interface <strong>DatasetRow</strong> &#123;</div>
+                <div class="ml-3">month: <span class="has-text-grey">number</span>;</div>
+                <div class="ml-3">year: number;</div>
+                    <div class="ml-3">station_number: number;</div>
+                        <div class="ml-3">chlorophyll: number;</div>
+                            <div class="ml-3">oxygen: number;</div>
+                                <div class="ml-3">spm: number;</div>
+                                    <div class="ml-3">salinity: number;</div>
+                                        <div class="ml-3">temperature: number;</div>
+                <div>&#125;</div>
+        </div>
         <div class="title is-5 mt-6">Map</div>
         <div class="subtitle is-5">
-            Simple Indicator
+            Water Quality Indicator
         </div>
-        <div class="content">For a brief overview how 
+        <div class="content">For a brief overview how the quality is currently at a station, the map marker are colored encoded.
 
-            This value takes into account 3 components: <code>Chlorophil</code>, <code>Temperature</code> and <code>SPM</code>
+            The heuristic calculation of this value takes into account the features into account and maps it to 3 simple to understand values:
+            <div style="height: 15rem; display: flex">
+                <app-indicator [quality]=1 class="mr-3"></app-indicator>
+                <app-indicator [quality]=2 class="mr-3"></app-indicator>
+                <app-indicator [quality]=3></app-indicator>
 
-            It is categorized into 3 values:
-            <ul>
-                <li><strong>Good:</strong> </li>
-                <li><strong>Neutral:</strong> </li>
-                <li><strong>Bad:</strong> </li>
-            </ul>
+            </div>
         </div>
 
         <div class="subtitle is-5">
             Time Charts
         </div>
         <div class="content">
-            Takes only data from last year.
-            Indicate how , the data used is the 
+            For every line chart we display the per month aggregated values of the last 2 years. To give the user a better feeling what's good or bad we also display the average of all other stations.
         </div>
-
-
-        <div class="title is-5 mt-3">Advanced</div>
     </div>
 </section>
